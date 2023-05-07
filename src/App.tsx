@@ -13,6 +13,7 @@ import {Provider} from 'react-redux';
 import {store} from '../src/redux/store';
 
 import {customTheme} from './utils/theme';
+import { Feed } from './components/feed';
 
 function App(): JSX.Element {
   const {
@@ -25,7 +26,7 @@ function App(): JSX.Element {
     <NativeBaseProvider theme={customTheme}>
     <Provider store={store}>
 
-    
+    <Feed/>
     
     </Provider>
     </NativeBaseProvider>

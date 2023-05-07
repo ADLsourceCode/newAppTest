@@ -25,6 +25,11 @@ export interface NewsArticle {
   }
   
 
+export interface NewsTagsProps {
+  selectedCategory: string;
+  setSelectedCategory: (category: string) => void;
+}
+
   export interface NewsCategoryTypes {
     [key: string]: string;
   }
