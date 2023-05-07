@@ -21,7 +21,7 @@ export interface NewsArticle {
   export interface NewsCategoryTypes {
     [key: string]: string;
   }
-  
+
  export interface GetNewsFeedParams  {
     setIsLoading: (isLoading: boolean) => void;
     setErrorMessage: (errorMessage: string) => void;
@@ -29,5 +29,9 @@ export interface NewsArticle {
     page: number;
     language: string;
     q: string;
+  };
+
+  export  type ErrorAlertProps = {
+    errorMessage: string;
   };
   
