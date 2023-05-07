@@ -11,7 +11,7 @@ import { NewsArticle } from '../../utils/types';
 import { FlatList, Heading, Spinner,Center,HStack,Switch,Alert, VStack,Text, useColorMode } from 'native-base';
 import { RefreshControl } from 'react-native';
 import { NewsTags } from '../newCategory';
-import { AR, EN, NEWS_FEED, NewsCategory,} from '../../utils/constants';
+import { AR, EN, NEWS_FEED, NO_DATA_FOUND, NewsCategory, SOMETHING_WENT_WRONG,} from '../../utils/constants';
 import {customTheme} from '../../utils/theme';
 
 import { ErrorAlert, Header, LanguageSwitcher } from '../misc/';
@@ -60,7 +60,37 @@ language ={language}
           setSelectedCategory={setSelectedCategory}
       />
       </HStack>
-
+      {isLoading?(
+        <Spinner  size="lg" />
+    ):
+    errorMessage.length>0?(
+      <ErrorAlert errorMessage={SOMETHING_WENT_WRONG} />
+    )
+    :newsFeed.length==0?(
+      <Center>
+<Text>{NO_DATA_FOUND}</Text>
+</Center>
+    ):(
+    <View style={[styles.listContent]} >
+    <FlatList
+      keyExtractor={(item: NewsArticle, index: Key) => uuid.v4().toString()}
+      showsVerticalScrollIndicator={false}
+      
+      data={newsFeed}
+      
+  onEndReachedThreshold={0.2}
+  
+     
+      renderItem={({item,index}) => (
+        
+         <Text>
+          {item.title}
+         </Text>
+      )}
+      style={styles.list}
+    />
+    </View>
+    )}
    
   </View>
     </View>

@@ -17,6 +17,7 @@ export const NewsCategory: NewsCategoryTypes = {
   export const NEWS_FEED = 'News Feed';
   export const GET_NEWS_FEED = 'GET_NEWS_FEED';
   export const SOMETHING_WENT_WRONG = 'Something went wrong';
+  export const NO_DATA_FOUND = 'No Data Found';
   export const PUBLISHED_AT = 'publishedAt';
   export const ERROR_OCCURED_WHILE_OPENING: string = 'Error occured while opening URL';
 
