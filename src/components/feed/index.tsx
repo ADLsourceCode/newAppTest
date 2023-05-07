@@ -11,11 +11,12 @@ import { NewsArticle } from '../../utils/types';
 import { FlatList, Heading, Spinner,Center,HStack,Switch,Alert, VStack,Text, useColorMode } from 'native-base';
 import { RefreshControl } from 'react-native';
 import { NewsTags } from '../newCategory';
-import { AR, EN, NEWS_FEED, NO_DATA_FOUND, NewsCategory, SOMETHING_WENT_WRONG,} from '../../utils/constants';
+import {  NO_DATA_FOUND, NewsCategory, SOMETHING_WENT_WRONG,} from '../../utils/constants';
 import {customTheme} from '../../utils/theme';
 
 import { ErrorAlert, Header, LanguageSwitcher } from '../misc/';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import NewsArticleItem from '../newArticle';
 
 export const Feed: React.FC = () => {
   const colors = customTheme.colors;
@@ -83,9 +84,7 @@ language ={language}
      
       renderItem={({item,index}) => (
         
-         <Text>
-          {item.title}
-         </Text>
+        <NewsArticleItem news={item} />
       )}
       style={styles.list}
     />
