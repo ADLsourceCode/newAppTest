@@ -18,6 +18,13 @@ export interface NewsArticle {
     content: string;
   }
 
+  export interface TagProps {
+    category: string;
+    selectedCategory: string;
+    setSelectedCategory: (category: string) => void;
+  }
+  
+
   export interface NewsCategoryTypes {
     [key: string]: string;
   }
@@ -25,7 +32,7 @@ export interface NewsArticle {
     setLanguage: (language:string) => void;
     language: string;
   };
-  
+
  export interface GetNewsFeedParams  {
     setIsLoading: (isLoading: boolean) => void;
     setErrorMessage: (errorMessage: string) => void;
