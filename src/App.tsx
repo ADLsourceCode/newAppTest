@@ -7,9 +7,10 @@
 /* eslint-disable */ 
 
 import React from 'react';
-import { NativeBaseProvider, Box, useColorMode,  } from "native-base";
+import { NativeBaseProvider, Box, useColorMode } from "native-base";
 
 import {Provider} from 'react-redux';
+import {store} from '../src/redux/store';
 import { Text } from 'react-native';
 
 
@@ -21,9 +22,13 @@ function App(): JSX.Element {
     
   
   return (
-  
+    <NativeBaseProvider >
+    <Provider store={store}>
 
-  <Text>Hello</Text>
+    <Text>Hello</Text>
+    
+    </Provider>
+    </NativeBaseProvider>
   );
 }
 
