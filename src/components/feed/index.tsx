@@ -40,6 +40,12 @@ export const Feed: React.FC = () => {
     dispatch(getNewsFeed({setIsLoading,setErrorMessage,pageSize,page,language,q:selectedCategory}));
   }, [dispatch,language,selectedCategory]);
 
+  const handleRefresh = useCallback(() => {
+    
+    dispatch(getNewsFeed({setIsLoading,setErrorMessage,pageSize,page,language,q:selectedCategory}));
+  }, [dispatch,language]);
+  
+
 
   
   const backgroundColor = colorMode === 'dark' ? colors.grey[600] : colors.white;
@@ -80,8 +86,9 @@ language ={language}
       data={newsFeed}
       
   onEndReachedThreshold={0.2}
-  
-     
+  refreshControl={
+    <RefreshControl refreshing={isLoading} onRefresh={handleRefresh} />
+  }  
       renderItem={({item,index}) => (
         
         <NewsArticleItem news={item} />
