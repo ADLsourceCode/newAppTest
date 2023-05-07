@@ -20,6 +20,8 @@ This is a news app built with React Native that allows users to browse news arti
 
 5. `npx react-native run-ios` / `npx react-native run-android` to run the platform application (remember to start a simulator or connect a device)
 
+6. For Web, use `npm run web`
+
 
 The following resources were used in the development of this app:
 
@@ -27,6 +29,7 @@ The following resources were used in the development of this app:
 
 ## Final Output
 1. Walkthrough Video of the Project - https://drive.google.com/file/d/1rjvMdpdgEOKgKmoy_JTEQla6c7NuA66D/view?usp=sharing
+2. Deployment URL - https://new-app-test-oj1q-mzly4uvfb-alamba093.vercel.app/  ( This will give CORS error as NEWAPI Enables CORS for PAID Plan and on the Free Plan it will enable CORS for Localhost only. https://newsapi.org/pricing For more information)
 
 
 
