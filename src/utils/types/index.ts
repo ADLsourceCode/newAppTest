@@ -21,7 +21,11 @@ export interface NewsArticle {
   export interface NewsCategoryTypes {
     [key: string]: string;
   }
-
+  export type LanguageSwitcherProps = {
+    setLanguage: (language:string) => void;
+    language: string;
+  };
+  
  export interface GetNewsFeedParams  {
     setIsLoading: (isLoading: boolean) => void;
     setErrorMessage: (errorMessage: string) => void;
