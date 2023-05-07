@@ -16,9 +16,7 @@ import {customTheme} from './utils/theme';
 import { Feed } from './components/feed';
 
 function App(): JSX.Element {
-  const {
-    colorMode
-  } = useColorMode();
+
 
     
   

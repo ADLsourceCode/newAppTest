@@ -34,7 +34,7 @@ export const Feed: React.FC = () => {
     colorMode,
     toggleColorMode
   } = useColorMode();
-
+  const backgroundColor = colorMode === 'dark' ? colors.grey[600] : colors.white;
   useEffect(() => {
     
     dispatch(getNewsFeed({setIsLoading,setErrorMessage,pageSize,page,language,q:selectedCategory}));
@@ -44,11 +44,21 @@ export const Feed: React.FC = () => {
     
     dispatch(getNewsFeed({setIsLoading,setErrorMessage,pageSize,page,language,q:selectedCategory}));
   }, [dispatch,language]);
+
+
+  const loadMore = () => {
+
+    
+    // setpageSize(pageSize+15);
+    // setPage(page+1);
+    // console.log("loading");
+    // dispatch(getNewsFeed(setisFetchingNextPage,setErrorMessage,pageSize,page,isLanguageEnglish?"en":"ar",selectedCategory));
+  }
   
 
 
   
-  const backgroundColor = colorMode === 'dark' ? colors.grey[600] : colors.white;
+  
   return (
     <SafeAreaView style={[{backgroundColor}]} >
     <View style={[styles.container,{backgroundColor}]}>
@@ -82,9 +92,8 @@ language ={language}
     <FlatList
       keyExtractor={(item: NewsArticle, index: Key) => uuid.v4().toString()}
       showsVerticalScrollIndicator={false}
-      
       data={newsFeed}
-      
+      onEndReached={loadMore}
   onEndReachedThreshold={0.2}
   refreshControl={
     <RefreshControl refreshing={isLoading} onRefresh={handleRefresh} />
