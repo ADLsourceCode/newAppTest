@@ -10,7 +10,8 @@ export const NewsCategory: NewsCategoryTypes = {
     netflix: 'netflix',
   };
 
-  
+
+  export const NEWS_FEED = 'News Feed';
   export const GET_NEWS_FEED = 'GET_NEWS_FEED';
   export const SOMETHING_WENT_WRONG = 'Something went wrong';
   export const PUBLISHED_AT = 'publishedAt';
