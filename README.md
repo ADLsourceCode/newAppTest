@@ -25,6 +25,11 @@ The following resources were used in the development of this app:
 
 1. Color Palette Generator - https://coolors.co/eee2df-eed7c5-c89f9c-c97c5d-b36a5e
 
+## Final Output
+1. Walkthrough Video of the Project - https://drive.google.com/file/d/1rjvMdpdgEOKgKmoy_JTEQla6c7NuA66D/view?usp=sharing
+
+
+
 
 ## API Usage
 
