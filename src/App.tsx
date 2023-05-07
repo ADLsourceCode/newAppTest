@@ -11,8 +11,8 @@ import { NativeBaseProvider, Box, useColorMode } from "native-base";
 
 import {Provider} from 'react-redux';
 import {store} from '../src/redux/store';
-import { Text } from 'react-native';
 
+import {customTheme} from './utils/theme';
 
 function App(): JSX.Element {
   const {
@@ -22,10 +22,10 @@ function App(): JSX.Element {
     
   
   return (
-    <NativeBaseProvider >
+    <NativeBaseProvider theme={customTheme}>
     <Provider store={store}>
 
-    <Text>Hello</Text>
+    
     
     </Provider>
     </NativeBaseProvider>
